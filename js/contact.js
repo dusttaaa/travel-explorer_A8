@@ -97,6 +97,15 @@ document.addEventListener("DOMContentLoaded", function () {
         changeStep("reset", showStep);
     });
 
+    multiStepForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (currentStep === steps.length - 1) {
+            travelStatus.textContent = "Travel inquiry submitted successfully!";
+            travelStatus.style.color = "green";
+        }
+    });
+    
     const stars = document.querySelectorAll(".star");
     const ratingMessage = document.getElementById("ratingMessage");
 
